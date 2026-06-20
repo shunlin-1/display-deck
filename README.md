@@ -1,5 +1,7 @@
 # Display Deck
 
+English | [繁體中文](README.zh-TW.md)
+
 A native [Quickshell](https://quickshell.org/) / QML monitor manager for the
 [niri](https://github.com/YaLTeR/niri) Wayland compositor. It reads live outputs
 from `niri msg`, lets you arrange, scale, rotate and toggle displays on a visual
