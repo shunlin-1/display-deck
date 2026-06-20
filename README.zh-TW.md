@@ -69,4 +69,4 @@ include "monitor.kdl"
 
 ## 授權條款
 
-MIT —— 詳見 `LICENSE`（請自行加入）。
+MIT —— 詳見 [`LICENSE`](LICENSE)。

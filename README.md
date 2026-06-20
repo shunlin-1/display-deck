@@ -69,4 +69,4 @@ include "monitor.kdl"
 
 ## License
 
-MIT — see `LICENSE` (add your own).
+MIT — see [`LICENSE`](LICENSE).
