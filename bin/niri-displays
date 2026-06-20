@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Display Deck launcher — native Quickshell/QML monitor manager for niri.
+# Single-instance: focus the existing window if open; otherwise clear any stale
+# (window-less) instances and launch exactly one. Stacked duplicates conflict and
+# none of them maps a window, so it looks like the deck "won't open".
+QML="$HOME/.local/share/niri-displays/qml/shell.qml"
+
+# Already-open Display Deck window? Just focus it and stop.
+id=$(niri msg --json windows 2>/dev/null | python3 -c \
+  "import json,sys; d=json.load(sys.stdin); print(next((w['id'] for w in d if (w.get('title') or '')=='Display Deck'), ''))" 2>/dev/null)
+if [ -n "$id" ]; then
+    exec niri msg action focus-window --id "$id"
+fi
+
+# No window: kill any stale window-less instances, then launch exactly one.
+pkill -f "$QML" 2>/dev/null && sleep 0.3
+exec qs -p "$QML" --allow-duplicate
