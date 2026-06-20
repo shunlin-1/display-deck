@@ -34,7 +34,7 @@ canvas, then writes both the running state (`niri msg output …`) and a persist
 ## Install
 
 ```sh
-git clone <your-remote> ~/Projects/display-deck
+git clone https://github.com/shunlin-1/display-deck.git ~/Projects/display-deck
 cd ~/Projects/display-deck
 ./install.sh
 ```
